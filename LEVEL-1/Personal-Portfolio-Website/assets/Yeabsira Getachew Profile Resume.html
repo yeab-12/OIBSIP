@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeabsira Getachew - Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #3b82f6;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+        
+        .resume-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* LEFT SIDEBAR */
+        .sidebar {
+            background: var(--dark);
+            color: white;
+            padding: 40px 30px;
+        }
+        
+        .profile-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid var(--accent);
+            margin: 0 auto 20px;
+            background: #374151;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-img i {
+            font-size: 60px;
+            color: var(--accent);
+            position: absolute;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            position: absolute;
+        }
+        
+        .name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .title {
+            color: var(--accent);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .contact-info {
+            margin: 30px 0;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .contact-item i {
+            width: 30px;
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+        
+        .skills-section, .languages-section {
+            margin: 30px 0;
+        }
+        
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+            color: var(--accent);
+        }
+        
+        .skill-item {
+            margin-bottom: 15px;
+        }
+        
+        .skill-name {
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background: #374151;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-level {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+        }
+        
+        .language-item {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        /* MAIN CONTENT */
+        .main-content {
+            padding: 40px;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 30px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        
+        .content-section {
+            margin-bottom: 30px;
+        }
+        
+        .content-title {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .content-title i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        .education-item, .project-item {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 3px solid #e2e8f0;
+            padding-bottom: 15px;
+        }
+        
+        .item-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        
+        .item-subtitle {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .item-date {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        
+        .item-description {
+            color: #4b5563;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .skill-category {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .category-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .category-list {
+            list-style: none;
+        }
+        
+        .category-list li {
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+        }
+        
+        .category-list li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .interest-tag {
+            background: #dbeafe;
+            color: var(--primary);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* PRINT STYLES */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .resume-container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .resume-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                padding: 30px 20px;
+            }
+            
+            .main-content {
+                padding: 30px 20px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- LEFT SIDEBAR -->
+        <div class="sidebar">
+            <div class="profile-img">
+                <i class="fas fa-user"></i>
+                <img src="./assets/images/my-profile.jpg" alt="Yeabsira Getachew">
+            </div>
+            <h1 class="name">Yeabsira Getachew</h1>
+            <p class="title">Software Engineering Student</p>
+            <div class="contact-info">
+                <div class="section-title">Contact</div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Alemgena, Ethiopia</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>yeabsiragetachew613@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+251-967-484-716</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>https://www.linkedin.com/in/yeabsira-getachew-aaa3a4349</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <span>https://github.com/yeab-12</span>
+                </div>
+            </div>
+            
+            <div class="skills-section">
+                <div class="section-title">Technical Skills</div>
+                <div class="skill-item">
+                    <div class="skill-name">Frontend Development</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">JavaScript</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">HTML</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">CSS</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 80%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="languages-section">
+                <div class="section-title">Languages</div>
+                <div class="language-item">
+                    <span>English</span>
+                    <span>Fluent</span>
+                </div>
+                <div class="language-item">
+                    <span>Amharic</span>
+                    <span>Native</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <p class="tagline">Motivated Software Engineering student passionate about creating impactful digital solutions through frontend and full stack development.</p>
+            
+            <div class="content-section">
+                <h2 class="content-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+                <div class="education-item">
+                    <h3 class="item-title">Adama Science and Technology University (ASTU)</h3>
+                    <p class="item-subtitle">Bachelor of Science in Software Engineering</p>
+                    <p class="item-date">2022 – Present</p>
+                    <p class="item-description">Currently pursuing degree with focus on web development, software engineering principles, and modern technologies.</p>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="content-title"><i class="fas fa-code"></i> Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4 class="category-title">Programming Languages</h4>
+                        <ul class="category-list">
+                            <li>C++</li>
+                            <li>Python</li>
+                            <li>Java</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4 class="category-title">Frontend</h4>
+                        <ul class="category-list">
+                            <li>HTML5 & CSS3</li>
+                            <li>JavaScript (ES6+)</li>
+                            <li>React (Learning)</li>
+                            <li>Responsive Design</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4 class="category-title">Backend & Tools</h4>
+                        <ul class="category-list">
+                            <li>Node.js</li>
+                            <li>Express.js</li>
+                            <li>Git & GitHub</li>
+                            <li>VS Code</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4 class="category-title">Other Skills</h4>
+                        <ul class="category-list">
+                            <li>Problem Solving</li>
+                            <li>UI/UX Understanding</li>
+                            <li>Team Collaboration</li>
+                            <li>Figma</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="content-title"><i class="fas fa-briefcase"></i> Projects</h2>
+                <div class="project-item">
+                    <h3 class="item-title">Personal Portfolio Website</h3>
+                    <p class="item-description">Developed a responsive personal portfolio using HTML, CSS, and JavaScript. Showcases skills, projects, and contact information with modern design principles.</p>
+                </div>
+                <div class="project-item">
+                    <h3 class="item-title">Student Portal (ASTU Project)</h3>
+                    <p class="item-description">Built a complete frontend for student registration, login, and course access using HTML, CSS, and JavaScript. Implemented user authentication and data visualization.</p>
+                </div>
+                <div class="project-item">
+                    <h3 class="item-title">Full Stack Task Manager App</h3>
+                    <p class="item-description">Developing a full stack web application using React, Node.js, and Express for task creation, updates, and user management with REST API integration.</p>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="content-title"><i class="fas fa-trophy"></i> Achievements & Interests</h2>
+                <div class="interests">
+                    <span class="interest-tag">Full Stack Development</span>
+                    <span class="interest-tag">UI/UX Design</span>
+                    <span class="interest-tag">Open Source Projects</span>
+                    <span class="interest-tag">Hackathons</span>
+                    <span class="interest-tag">Coding Challenges</span>
+                    <span class="interest-tag">Modern JavaScript Frameworks</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Simple animation for skill bars
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillBars = document.querySelectorAll('.skill-level');
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.transition = 'width 1.5s ease-in-out';
+                    bar.style.width = width;
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>

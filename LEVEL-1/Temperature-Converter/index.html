@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Temperature Converter</title>
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+        background-color: rgb(179, 197, 197);
+    }
+    input, select, button{
+        padding: 10px;
+        margin: 10px;
+        font-size: 16px;
+        color: #010a09;
+        background-color: #f4f4f4;
+    }
+    #result{
+        margin-top: 20px;
+        font-size: 24px;
+        color: #333;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Temperature Converter</h1>
+
+<input type="number" id="temp" placeholder="Enter temperature">
+
+<select id="unit">
+<option value="C">Celsius</option>
+<option value="F">Fahrenheit</option>
+</select>
+
+<button onclick="convert()">Convert</button>
+
+<h2 id="result"></h2>
+
+<script>
+    function convert(){
+
+let temp = document.getElementById("temp").value
+let unit = document.getElementById("unit").value
+let result
+
+if(unit=="C"){
+result = (temp*9/5)+32
+document.getElementById("result").innerHTML =
+result + " °F"
+}
+
+else{
+result = (temp-32)*5/9
+document.getElementById("result").innerHTML =
+result + " °C"
+}
+
+}
+</script>
+
+</body>
+</html>

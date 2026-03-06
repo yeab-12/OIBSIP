@@ -1,0 +1,51 @@
+body{
+font-family: Arial;
+margin:0;
+}
+
+header{
+background:#5a5252;
+color:rgb(223, 83, 83);
+padding:15px;
+display:flex;
+justify-content:space-between;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+}
+
+.hero{
+text-align:center;
+padding:80px;
+background:#f4f4f4;
+}
+
+button{
+padding:10px 20px;
+background:rgb(0, 191, 255);
+color:white;
+border:none;
+}
+
+.features{
+display:flex;
+justify-content:space-around;
+padding:40px;
+}
+
+.box{
+border:1px solid #ddd;
+padding:20px;
+width:200px;
+text-align:center;
+}
+
+footer{
+text-align:center;
+background:#333;
+color:white;
+padding:10px;
+}
